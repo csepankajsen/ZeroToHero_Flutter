@@ -13,10 +13,18 @@ void main() {
                 Color.fromARGB(152, 121, 180, 238),
                 Color.fromARGB(183, 2, 33, 65)
               ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
           child: const Center(
-            child: Text('My First app'),
+            child: Text(
+              'Hello Dart',
+              style: TextStyle(
+                fontSize: 30,
+                color: Color.fromARGB(252, 76, 51, 3),
+              ),
+            ),
           ),
         ),
       ),
