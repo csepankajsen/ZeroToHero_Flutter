@@ -16,17 +16,21 @@ const endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
   // GradientContainer({key}): super(key: key);---one way to pass key  and pass that to key parent class constructor
-  const GradientContainer({super.key});
+  // const GradientContainer({super.key, required this.colors});---can use this when passing the colors in list
+  // const GradientContainer(this.colors, {super.key});---can also use this
+  const GradientContainer(this.colorMix1, this.colorMix2,{super.key});
+
+  // final List<Color> colors;---can use when passing the colors in list
+  final Color colorMix1, colorMix2;
+
   @override
   Widget build(context) {
     // endAlignment = Alignment.bottomRight;
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(152, 121, 180, 238),
-            Color.fromARGB(183, 2, 33, 65)
-          ],
+          // colors: colors,------can use when passing colors in list
+          colors: [colorMix1, colorMix2],
           begin: startAlignment,
           end: endAlignment,
         ),
