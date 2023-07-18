@@ -32,7 +32,7 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: const Center(
-        child: CustomTextWidget(),
+        child: CustomTextWidget('Hello Dart'),
       ),
     );
   }
