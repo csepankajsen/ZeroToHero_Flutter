@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:first_app/custom_text_widget.dart';
+// import 'package:first_app/custom_text_widget.dart';
 
 // can use final if we don't want my variable chnaged or overwrite by another
 // final startAlignment = Alignment.topLeft;
@@ -35,8 +35,9 @@ class GradientContainer extends StatelessWidget {
           end: endAlignment,
         ),
       ),
-      child: const Center(
-        child: CustomTextWidget('Hello Dart'),
+      child: Center(
+        // child: CustomTextWidget('Hello Dart'),
+        child: Image.asset('assets/images/dice-1.png',width: 200,),
       ),
     );
   }

@@ -9,7 +9,7 @@ void main() {
         // body: GradientContainer(colors:
         //   [Color.fromARGB(152, 121, 180, 238), Color.fromARGB(183, 2, 33, 65)]
         // ),---can pass colors in list here
-        body: GradientContainer(Color.fromARGB(152, 121, 180, 238), Color.fromARGB(183, 2, 33, 65)
+        body: GradientContainer(Color.fromARGB(219, 101, 24, 243), Color.fromARGB(222, 238, 190, 223)
         ),
       ),
     ),
