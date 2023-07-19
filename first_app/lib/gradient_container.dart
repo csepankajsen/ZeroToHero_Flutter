@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:first_app/custom_text_widget.dart';
+import 'package:first_app/custom_text_widget.dart';
 
 // can use final if we don't want my variable chnaged or overwrite by another
 // final startAlignment = Alignment.topLeft;
@@ -18,10 +18,14 @@ class GradientContainer extends StatelessWidget {
   // GradientContainer({key}): super(key: key);---one way to pass key  and pass that to key parent class constructor
   // const GradientContainer({super.key, required this.colors});---can use this when passing the colors in list
   // const GradientContainer(this.colors, {super.key});---can also use this
-  const GradientContainer(this.colorMix1, this.colorMix2,{super.key});
+  const GradientContainer(this.colorMix1, this.colorMix2, {super.key});
 
   // final List<Color> colors;---can use when passing the colors in list
   final Color colorMix1, colorMix2;
+
+  void rolldice() {
+    // ...
+  }
 
   @override
   Widget build(context) {
@@ -37,7 +41,27 @@ class GradientContainer extends StatelessWidget {
       ),
       child: Center(
         // child: CustomTextWidget('Hello Dart'),
-        child: Image.asset('assets/images/dice-1.png',width: 200,),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/images/dice-1.png',
+              width: 200,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            // TextButton(onPressed: () {}, child: const Text('Roll Dice'))---can define ananymous function.
+            TextButton(
+              onPressed: rolldice,
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.all(20.0),//---we can add passing but can prefer sizedbox metrhod above
+                foregroundColor: Colors.white,
+              ),
+              child: const CustomTextWidget('Roll Dice'),
+            )
+          ],
+        ),
       ),
     );
   }
