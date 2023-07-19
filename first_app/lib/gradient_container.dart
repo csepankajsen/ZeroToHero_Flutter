@@ -18,13 +18,15 @@ class GradientContainer extends StatelessWidget {
   // GradientContainer({key}): super(key: key);---one way to pass key  and pass that to key parent class constructor
   // const GradientContainer({super.key, required this.colors});---can use this when passing the colors in list
   // const GradientContainer(this.colors, {super.key});---can also use this
-  const GradientContainer(this.colorMix1, this.colorMix2, {super.key});
+  GradientContainer(this.colorMix1, this.colorMix2, {super.key});
 
   // final List<Color> colors;---can use when passing the colors in list
   final Color colorMix1, colorMix2;
+  var activeDiceImage = 'assets/images/dice-2.png';
 
   void rolldice() {
-    // ...
+    activeDiceImage = 'assets/images/dice-4.png';
+    print("debugging image change and stateless widget");
   }
 
   @override
@@ -45,7 +47,7 @@ class GradientContainer extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              'assets/images/dice-1.png',
+              activeDiceImage,
               width: 200,
             ),
             const SizedBox(
@@ -55,7 +57,8 @@ class GradientContainer extends StatelessWidget {
             TextButton(
               onPressed: rolldice,
               style: TextButton.styleFrom(
-                padding: const EdgeInsets.all(20.0),//---we can add passing but can prefer sizedbox metrhod above
+                padding: const EdgeInsets.all(
+                    20.0), //---we can add passing but can prefer sizedbox metrhod above
                 foregroundColor: Colors.white,
               ),
               child: const CustomTextWidget('Roll Dice'),
