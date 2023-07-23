@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/wallpaper.dart';
+import 'package:quiz_app/start_screen.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
       home: Scaffold(
-        body: WallPaperManager(),
-      ),
-      Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text('Questions'),
-          Text(),
-        ],
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(252, 244, 214, 96),
+                Color.fromARGB(248, 143, 249, 5)
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: const StartScreen(),
+        ),
       ),
     ),
   );
