@@ -22,7 +22,6 @@ class GradientContainer extends StatelessWidget {
 
   // final List<Color> colors;---can use when passing the colors in list
   final Color colorMix1, colorMix2;
-
   @override
   Widget build(context) {
     // endAlignment = Alignment.bottomRight;
