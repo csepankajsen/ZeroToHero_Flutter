@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 // import 'package:quiz_app/wallpaper.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  // const StartScreen(void Function() StartQuiz, {super.key});//can also pass function like this
+  const StartScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
   @override
   Widget build(context) {
     return Center(
@@ -26,7 +29,7 @@ class StartScreen extends StatelessWidget {
           // Icon(),---can also use icon outside of the button
           const SizedBox(height: 20),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(foregroundColor: const Color.fromARGB(255, 228, 10, 13)),
             // icon: Text()
             icon: const Icon(Icons.arrow_circle_right_outlined),
